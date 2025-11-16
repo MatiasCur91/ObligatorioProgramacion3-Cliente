@@ -1,0 +1,21 @@
+# Visual Studio / VS Code
+.vs/
+*.user
+*.suo
+*.userprefs
+
+# Build
+bin/
+obj/
+Debug/
+Release/
+[Bb]uild/
+
+# NuGet
+packages/
+*.nupkg
+
+# appsettings secrets (si usás)
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
