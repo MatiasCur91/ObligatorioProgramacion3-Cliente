@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ClienteHTTPObligatorio.Models.DTOPago>
+
+@{
+    ViewData["Title"] = "ObtenerPagosPorUsuario";
+}
+
+<h1>ObtenerPagosPorUsuario</h1>
+
+<p>
+    @ViewBag.msg
+</p>
+@if(Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MetodoDePago)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoGasto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoPago)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MontoTotal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreUsuario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaPago)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SaldoPendiente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuarioEmail)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MetodoDePago)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoGasto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoPago)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MontoTotal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreUsuario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaPago)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SaldoPendiente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UsuarioEmail)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
