@@ -1,5 +1,5 @@
 ﻿@{
-    string logueadoRol = Context.Session.GetString("LogueadoRol");
+    string logueadoRol = Context.Session.GetString("Rol");
 
 }
 
@@ -33,24 +33,20 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Iniciar sesion</a>
                             </li>
-                        }
-                      @*   @if (logueadoRol.Contains("Administrador"))
+                        }else if (logueadoRol.Contains("Administrador"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pago" asp-action="ObtenerPagosUsuario">Mis pagos</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Pago" asp-action="ObtenerPagosPorUsuario">Pagos por usuario</a>
                             </li>
                             
-                        }
-                        @if (logueadoRol.Contains("Gerente"))
+                        }else if (logueadoRol.Contains("Gerente"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pago" asp-action="ObtenerPagosUsuario">Mis pagos</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Pago" asp-action="ObtenerPagosPorUsuario">Pagos por usuario</a>
                             </li>
 
-                        } *@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pago" asp-action="ObtenerPagosPorUsuario">Mis pagos</a>
-                        </li>
+                        } 
+                        
                      
 
                         @if (logueadoRol != null)

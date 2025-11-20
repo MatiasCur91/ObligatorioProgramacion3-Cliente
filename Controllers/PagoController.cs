@@ -19,33 +19,33 @@ namespace ClienteHTTPObligatorio.Controllers
             return View();
         }
 
-       
-
-      
-        public async Task<IActionResult> ObtenerPagosPorUsuario()
+        [HttpGet]
+        public async Task<IActionResult> ObtenerPagosPorUsuario(string? email)
         {
+            if (email == null)
+                return View();
+
             string token = HttpContext.Session.GetString("Token");
 
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-            var response = await _httpClient.GetAsync("Pago/usuario-pagos");
-
+            var response = await _httpClient.GetAsync($"Pago/usuario-pagos/{email}");
 
             if (response.IsSuccessStatusCode)
             {
                 string resultado = await response.Content.ReadAsStringAsync();
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
                 var listaPagos = JsonSerializer.Deserialize<List<DTOPago>>(resultado, options);
                 return View(listaPagos);
             }
-            else
-            {
-                ViewBag.msg = "Error al obtener los pagos.";
-                return View();
-            }
 
-
-
+            ViewBag.msg = "Error al obtener los pagos.";
+            return View();
         }
+
+
+
     }
 }
