@@ -6,9 +6,18 @@
 
 <h1>ObtenerPagosPorUsuario</h1>
 
+
+
+<form asp-action="ObtenerPagosPorUsuario" method="get">
+    <label>Email del usuario:</label>
+    <input type="string" name="email" class="form-control" />
+    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+</form>
+
 <p>
     @ViewBag.msg
 </p>
+
 @if(Model != null)
 {
     <table class="table">
