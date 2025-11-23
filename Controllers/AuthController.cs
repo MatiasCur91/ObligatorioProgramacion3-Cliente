@@ -12,7 +12,7 @@ namespace ClienteHTTPObligatorio.Controllers
         public AuthController(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("https://localhost:7122/api/");
+            _httpClient.BaseAddress = new Uri("http://localhost:5268/api/");
         }
         public IActionResult Index()
         {

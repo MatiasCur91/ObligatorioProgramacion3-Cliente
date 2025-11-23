@@ -1,0 +1,46 @@
+@model IEnumerable<ClienteHTTPObligatorio.Models.DTOAuditoria>
+
+@{
+    ViewData["Title"] = "Auditoría por Tipo de Gasto";
+}
+
+<h2>Consultar Auditoría</h2>
+
+<form method="get" asp-action="ObtenerAuditoriaPorTipoGasto">
+    <div class="form-group">
+        <label>ID Tipo de Gasto</label>
+        <input type="number" class="form-control" name="idTipoGasto" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+</form>
+
+@if (ViewBag.msg != null)
+{
+    <div class="alert alert-warning mt-3">@ViewBag.msg</div>
+}
+
+@if (Model != null && Model.Any())
+{
+    <h3 class="mt-4">Resultados</h3>
+
+    <table class="table table-striped mt-3">
+        <thead>
+        <tr>
+            <th>Tipo Operación</th>
+            <th>Fecha</th>
+            <th>Usuario</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Accion</td>
+                <td>@a.Fecha</td>
+                <td>@a.Usuario</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
