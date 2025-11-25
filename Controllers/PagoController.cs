@@ -1,4 +1,6 @@
-﻿using ClienteHTTPObligatorio.Models;
+﻿using System.Net.Http.Headers;
+using System.Text;
+using ClienteHTTPObligatorio.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
@@ -44,8 +46,94 @@ namespace ClienteHTTPObligatorio.Controllers
             ViewBag.msg = "Error al obtener los pagos.";
             return View();
         }
+        
+        private async Task<List<DTOTipoGasto>> ObtenerTipoGasto()
+        {
+            var response = await _httpClient.GetAsync("TipoGasto");
+
+            if (!response.IsSuccessStatusCode)
+                return new List<DTOTipoGasto>();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            return JsonSerializer.Deserialize<List<DTOTipoGasto>>(json,
+                       new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+                   ?? new List<DTOTipoGasto>();
+        }
 
 
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            string token = HttpContext.Session.GetString("Token");
 
+            if (string.IsNullOrEmpty(token))
+            {
+                ViewBag.msg = "Debe iniciar sesión.";
+                return View();
+            }
+
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
+
+
+            List<DTOTipoGasto> tipoGastos = await ObtenerTipoGasto();
+            ViewBag.tipoGastos = tipoGastos;
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Create(DTOAltaPago dto)
+        {
+            string token = HttpContext.Session.GetString("Token");
+            
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
+            
+            List<DTOTipoGasto> tipoGastos = await ObtenerTipoGasto();
+            ViewBag.tipoGastos = tipoGastos;
+
+            if (!ModelState.IsValid)
+            {
+                ViewBag.msg = "Hay errores en el formulario.";
+                return View(dto);
+            }
+
+            if (dto.TipoSeleccionado == "Unico")
+            {
+                if (dto.FechaPago == null || dto.NumeroRecibo == null)
+                {
+                    ViewBag.msg = "Debe ingresar FechaPago y NumeroRecibo para un pago Único.";
+                    return View(dto);
+                }
+            }
+            else if (dto.TipoSeleccionado == "Recurrente")
+            {
+                if (dto.FechaInicio == null || dto.FechaFin == null)
+                {
+                    ViewBag.msg = "Debe ingresar FechaInicio y FechaFin para un pago Recurrente.";
+                    return View(dto);
+                }
+            }
+
+            // Enviar a API
+            var json = JsonSerializer.Serialize(dto);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync("Pago", content);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                ViewBag.msg = "Pago registrado correctamente.";
+                ModelState.Clear();
+                dto = new DTOAltaPago();
+                return View(dto);
+            }
+
+            ViewBag.msg = "Error al registrar el pago.";
+            return View(dto);
+        }
     }
 }
+
