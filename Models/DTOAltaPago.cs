@@ -15,5 +15,5 @@ public class DTOAltaPago
     public DateTime? FechaInicio { get; set; }
     public DateTime? FechaFin { get; set; }
 
-    public List<DTOTipoGasto> TiposGastos { get; set; } = new();
+    // public List<DTOTipoGasto> TiposGastos { get; set; } = new();
 }

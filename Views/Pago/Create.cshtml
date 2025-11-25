@@ -18,9 +18,9 @@
 
     <div class="form-group mb-3">
         <label asp-for="IdTipoGasto" class="form-label">Tipo de Gasto</label>
-        <select asp-for="IdTipoGasto" class="form-select">
+        <select name="IdTipoGasto" class="form-select">
             <option value="">Seleccione un tipo de gasto</option>
-            @foreach (var tg in Model.TiposGastos)
+            @foreach (var tg in ViewBag.tipoGastos)
             {
                 <option value="@tg.Id">@tg.Nombre</option>
             }

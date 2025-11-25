@@ -74,19 +74,25 @@ namespace ClienteHTTPObligatorio.Controllers
             }
 
             _httpClient.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                new AuthenticationHeaderValue("Bearer", token);
 
-            var dto = new DTOAltaPago();
-            dto.TiposGastos = await ObtenerTipoGasto();
 
-            return View(dto);
+            List<DTOTipoGasto> tipoGastos = await ObtenerTipoGasto();
+            ViewBag.tipoGastos = tipoGastos;
+            return View();
         }
 
 
         [HttpPost]
         public async Task<IActionResult> Create(DTOAltaPago dto)
         {
-            dto.TiposGastos = await ObtenerTipoGasto();
+            string token = HttpContext.Session.GetString("Token");
+            
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
+            
+            List<DTOTipoGasto> tipoGastos = await ObtenerTipoGasto();
+            ViewBag.tipoGastos = tipoGastos;
 
             if (!ModelState.IsValid)
             {
@@ -115,14 +121,13 @@ namespace ClienteHTTPObligatorio.Controllers
             var json = JsonSerializer.Serialize(dto);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("Pago/AltaPago", content);
+            var response = await _httpClient.PostAsync("Pago", content);
             
             if (response.IsSuccessStatusCode)
             {
                 ViewBag.msg = "Pago registrado correctamente.";
                 ModelState.Clear();
                 dto = new DTOAltaPago();
-                dto.TiposGastos = await ObtenerTipoGasto();
                 return View(dto);
             }
 

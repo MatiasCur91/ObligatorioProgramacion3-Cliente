@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClienteHTTPObligatorio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aed1b604c280e063b44492fb70a59ae56e4a2bc6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e7ce886648a124abb2288fa544a176b88105a5e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClienteHTTPObligatorio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClienteHTTPObligatorio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
