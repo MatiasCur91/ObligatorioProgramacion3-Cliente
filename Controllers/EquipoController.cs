@@ -12,7 +12,7 @@ public class EquipoController : Controller
     public EquipoController(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri("http://localhost:5268/api/");
+        _httpClient.BaseAddress = new Uri("https://webapioblip3.azurewebsites.net/api/");
     }
 
     [HttpGet]
