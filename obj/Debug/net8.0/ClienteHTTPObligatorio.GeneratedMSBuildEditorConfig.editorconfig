@@ -17,59 +17,63 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ClienteHTTPObligatorio
 build_property.RootNamespace = ClienteHTTPObligatorio
-build_property.ProjectDir = /Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/
+build_property.ProjectDir = /Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente
+build_property.MSBuildProjectDirectory = /Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Auditoria/ObtenerAuditoriaPorTipoGasto.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Auditoria/ObtenerAuditoriaPorTipoGasto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXVkaXRvcmlhL09idGVuZXJBdWRpdG9yaWFQb3JUaXBvR2FzdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Auth/Login.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Equipo/EquiposPorMonto.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Equipo/EquiposPorMonto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXF1aXBvL0VxdWlwb3NQb3JNb250by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Home/Index.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Home/Privacy.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Pago/Create.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Pago/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFnby9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Pago/ObtenerPagosPorUsuario.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Pago/ObtenerPagosPorUsuario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFnby9PYnRlbmVyUGFnb3NQb3JVc3VhcmlvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Shared/Error.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/_ViewImports.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Usuario/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9SZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/_ViewStart.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cex/RiderProjects/ObligatorioProgramacion3-Cliente/Views/Shared/_Layout.cshtml]
+[/Users/cex/RiderProjects/ObligatorioProgramacion3-ClienteHTTP/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-c0nkylfhem

@@ -13,7 +13,7 @@ namespace ClienteHTTPObligatorio.Controllers
         public PagoController(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("http://localhost:5268/api/");
+            _httpClient.BaseAddress = new Uri("https://webapioblip3.azurewebsites.net/api/");
 
         }
         public IActionResult Index()
@@ -117,7 +117,6 @@ namespace ClienteHTTPObligatorio.Controllers
                 }
             }
 
-            // Enviar a API
             var json = JsonSerializer.Serialize(dto);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
